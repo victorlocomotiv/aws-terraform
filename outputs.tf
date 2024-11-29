@@ -3,14 +3,19 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
+output "public_subnets" {
+  description = "List of public subnet IDs"
+  value       = module.vpc.public_subnets
+}
+
 output "private_subnets" {
   description = "List of private subnet IDs"
   value       = module.vpc.private_subnets
 }
 
-output "public_subnets" {
-  description = "List of public subnet IDs"
-  value       = module.vpc.public_subnets
+output "nat_eip_ids" {
+  description = "List of NAT Gateway EIP allocation IDs"
+  value       = aws_eip.nat[*].id
 }
 
 output "alb_dns_name" {
