@@ -10,14 +10,14 @@ def simplify_terraform_graph(input_content):
         "module.alb": "ALB",
         "aws_route53": "Route53"
     }
-    
+
     # Start building the simplified DOT file
     simplified_dot = '''digraph {
     rankdir = "TB"
-    
+
     # Node definitions with better styling
     node [shape=box, style="rounded,filled", fontname="Helvetica", fillcolor=lightblue]
-    
+
     # Modules
     "AWS Provider" [fillcolor=lightgrey]
     "VPC Module" [description="VPC with public/private subnets"]
@@ -27,12 +27,12 @@ def simplify_terraform_graph(input_content):
 
     # Variables
     node [shape=note, fillcolor=lightyellow]
-    "Variables" [label="Infrastructure Variables\\n- Environment\\n- AWS Region\\n- VPC CIDR\\n- Subnet CIDRs\\n- Domain Name\\n- Certificate ARN"]
+    "Variables" [label="Infrastructure Variables\\n- Environment\\n- AWS Region\\n- VPC CIDR\\n- Subnet CIDRs\\n- Domain Name\\n- Subdomain\\n- Certificate ARN"]
 
     # Dependencies
     "Variables" -> "AWS Provider"
 '''
-    
+
     # Extract relationships from the original graph
     relationships = set()
     for line in input_content.split('\n'):
@@ -47,7 +47,7 @@ def simplify_terraform_graph(input_content):
     # Add relationships to the graph
     simplified_dot += "\n".join(sorted(relationships))
     simplified_dot += "\n}"
-    
+
     return simplified_dot
 
 def main():
