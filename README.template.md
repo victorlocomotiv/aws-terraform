@@ -91,7 +91,3 @@ Please read our [Contributing Guide](CONTRIBUTING.md) for details on our develop
 
 <!-- BEGIN_COST -->
 <!-- END_COST -->
-
-## License
-
-[MIT](LICENSE)
