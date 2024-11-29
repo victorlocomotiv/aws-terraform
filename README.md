@@ -214,10 +214,6 @@ Project: main
 ```
 <!-- END_COST -->
 
-For a more detailed analysis:
-- [Cost Breakdown](docs/infracost.md)
-- [HTML Cost Report](docs/infracost.html)
-
 ## License
 
 [MIT](LICENSE)
