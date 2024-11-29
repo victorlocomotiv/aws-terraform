@@ -26,7 +26,6 @@ terraform.rc
 # Generated files
 docs/*
 !/docs/infracost.md
-!/docs/infracost.html
 !/docs/simplified-graph.png
 
 # IDE & System files

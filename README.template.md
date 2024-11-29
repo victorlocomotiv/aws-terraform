@@ -92,10 +92,6 @@ Please read our [Contributing Guide](CONTRIBUTING.md) for details on our develop
 <!-- BEGIN_COST -->
 <!-- END_COST -->
 
-For a more detailed analysis:
-- [Cost Breakdown](docs/infracost.md)
-- [HTML Cost Report](docs/infracost.html)
-
 ## License
 
 [MIT](LICENSE)
