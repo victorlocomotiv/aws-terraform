@@ -155,13 +155,21 @@ resource "aws_kms_key" "route53" {
         Action = [
           "kms:DescribeKey",
           "kms:GetPublicKey",
-          "kms:Sign",
-          "kms:CreateGrant"
+          "kms:Sign"
         ]
+        Resource = "*"
+      },
+      {
+        Sid    = "Allow Route 53 DNSSEC to CreateGrant"
+        Effect = "Allow"
+        Principal = {
+          Service = "dnssec-route53.amazonaws.com"
+        }
+        Action   = "kms:CreateGrant"
         Resource = "*"
         Condition = {
           Bool = {
-            "kms:GrantIsForAWSResource" = "true"
+            "kms:GrantIsForAWSResource" : "true"
           }
         }
       }
